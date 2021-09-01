@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <title>{{ page_title }}</title>
   <meta charset="utf-8">
@@ -7,38 +8,45 @@
   <meta name="description" content="{{ page_description | escape }}">
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  {{ content_for_header }} <!-- Header hook for plugins -->
-  {{ 'application.scss.css' | asset_url | stylesheet_tag }}
+  {{ content_for_header }}
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://cdn.shopify.com/s/files/1/0076/8747/1170/files/kinto-favicon_32x32.png?v=1554888130" type="image/png">
+  <!-- Google Fonts -->
+  <link
+  href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+  rel="stylesheet">
+
+  <!-- Material Icon Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/377e169bca.js" crossorigin="anonymous"></script>
+
+  <!-- Axios JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+  <!-- Vue JS 03 -->
+  <!-- <script src="https://unpkg.com/vue@next"></script> -->
+  <script src="https://unpkg.com/vue@3.0.5/dist/vue.global.prod.js"></script>
+  
+  <!-- Swiper JS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Header hook for plugins -->
+  {{ 'main.min.css' | asset_url | stylesheet_tag }}
   {{ 'application.js' | asset_url | script_tag }}
+
 </head>
+
 <body>
 
-  {% for link in linklists.main-menu.links %}
-    {% assign child_list_handle = link.title | handleize %}
-    {% if linklists[child_list_handle].links != blank %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
-      [{% for childlink in linklists[child_list_handle].links %}
-        <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-      {% endfor %}]
-    {% else %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
-    {% endif %}
-  {% endfor %}
-
-  <a href="/cart">cart</a>
-
-  {% if shop.customer_accounts_enabled %}
-    {% if customer %}
-      <a href="/account">account</a>
-      {{ 'log out'  | customer_logout_link }}
-    {% else %}
-      {{ 'log in ' | customer_login_link }}
-      {{ 'register' | customer_register_link }}
-    {% endif %}
-  {% endif %}
+  {% section 'header' %}
 
   <main role="main">
     {{ content_for_layout }}
   </main>
+
+  {% section 'footer' %}
 </body>
+
 </html>
