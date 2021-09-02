@@ -31,6 +31,9 @@
   <!-- Swiper JS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  
+  <!-- YouTube iFrame -->
+  {{ 'iframe.js' | asset_url | script_tag }}
 
   <!-- Header hook for plugins -->
   {{ 'main.min.css' | asset_url | stylesheet_tag }}

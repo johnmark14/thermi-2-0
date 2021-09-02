@@ -1,0 +1,57 @@
+<section class="section-plaintext section-padding" id="conceptMovie">
+    <div class="plaintext-shell shell">
+        <h4 class="plaintext-title">Personalize and make your own special</h4>
+        <div class="plaintext-container grid grid-temp-col-2">
+            <div class="plaintext-description">
+                <p>"MARK IT BY KINTO" Is a service that allows you to Personalize
+                    stainless steel tumblers and resin bottles.
+                </p>
+                <p>
+                    As a my tumbler, please enjoy it as a matching item with your family and friends, as
+                    a souvenir or gift.
+                </p>
+            </div>
+            <div class="plaintext-demo">
+                <a href="https://www.youtube.com/embed/2XuXBxcXO_Q?loop=1&playlist=2XuXBxcXO_Q"
+                    class="thumbnail" @click.prevent="toggleModal">
+                    <img src="https://img.youtube.com/vi/2XuXBxcXO_Q/0.jpg" alt="">
+                </a>
+
+                <transition name="modal">
+                    <div class="modal" v-show="modalOpen" @click="toggleModal(); stopModalVideo();"
+                        @wheel.prevent @touchmove.prevent @scroll.prevent>
+                        <div class="modal-video">
+                            <a href="https://www.youtube.com/embed/2XuXBxcXO_Q" class="modal-closebtn"
+                                @click.stop.prevent="toggleModal(); stopModalVideo();">
+                                <span></span>
+                                <span></span>
+                            </a>
+                            <div id="modaliframe"></div>
+                        </div>
+                    </div>
+                </transition>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const conceptMovie = {
+    data() {
+        return {
+            modalOpen: false,
+        }
+    },
+    methods: {
+        toggleModal() {
+            this.modalOpen = !this.modalOpen
+        },
+        stopModalVideo() {
+            player.stopVideo()
+        },
+    }
+}
+
+Vue.createApp(conceptMovie).mount('#conceptMovie');
+
+</script>
