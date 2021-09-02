@@ -5,34 +5,16 @@
     <div class="intro">
         <!--Handles the left right padding-->
         <div class="intro-shell shell">
-            {% if section.blocks.imageDesktop %}
+            {% if section.blocks.size != 0 %}
                 <div class="intro-slider">
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
+                            {% for block in section.blocks %}
                             <!-- bg-img -->
-                            <div class="swiper-slide bg-img"><img src="https://cdn.shopify.com/s/files/1/0076/8747/1170/files/slide1_cf97a009-c310-4634-971c-3d289be8205d_2480x.jpg?v=1626052132" alt=""></div>
-                            <!-- small-img -->
-                            <div class="swiper-slide small-img"><img src="https://cdn.shopify.com/s/files/1/0076/8747/1170/files/SPslide1_750x.jpg?v=1624442832" alt=""></div>
-                            <!-- bg-img -->
-                            <div class="swiper-slide bg-img"><img src="https://cdn.shopify.com/s/files/1/0076/8747/1170/files/slide4_caf7c2c2-367c-4ef6-ae9b-b6dcff57209f_2480x.jpg?v=1626052156" alt=""></div>
-                            <!-- small-img -->
-                            <div class="swiper-slide small-img"><img src="https://cdn.shopify.com/s/files/1/0076/8747/1170/files/SPslide4_750x.jpg?v=1624442946" alt=""></div>
-                            <!-- bg-img -->
-                            <div class="swiper-slide bg-img"><img src="https://cdn.shopify.com/s/files/1/0076/8747/1170/files/slide2_477cd339-05f0-49b6-8cb9-d4f7bdac7dbf_2480x.jpg?v=1626052178" alt=""></div>
-                            <!-- small-img -->
-                            <div class="swiper-slide small-img"><img src="https://cdn.shopify.com/s/files/1/0076/8747/1170/files/SPslide2_9dca8298-55d9-4537-aec9-d8a1bfae0702_750x.jpg?v=1626052239" alt=""></div>
-                            <!-- bg-img -->
-                            <div class="swiper-slide bg-img"><img src="https://cdn.shopify.com/s/files/1/0076/8747/1170/files/slide3_3536e56e-e990-49f6-9a12-5be0318f0c11_2480x.jpg?v=1626052209" alt=""></div>
-                            <!-- small-img -->
-                            <div class="swiper-slide small-img"><img src="https://cdn.shopify.com/s/files/1/0076/8747/1170/files/SPslide3_750x.jpg?v=1624442927" alt=""></div>
-                            <!-- bg-img -->
-                            <div class="swiper-slide bg-img"><img src="https://cdn.shopify.com/s/files/1/0076/8747/1170/files/slide5_2480x.jpg?v=1624434996" alt=""></div>
-                            <!-- small-img -->
-                            <div class="swiper-slide small-img"><img src="https://cdn.shopify.com/s/files/1/0076/8747/1170/files/SPslide5_750x.jpg?v=1624442910" alt=""></div>
-                            <!-- bg-img -->
-                            <div class="swiper-slide bg-img"><img src="https://cdn.shopify.com/s/files/1/0076/8747/1170/files/main_pc_01_2480x.jpg?v=1597796957" alt=""></div>
-                            <!-- small-img -->
-                            <div class="swiper-slide small-img"><img src="https://cdn.shopify.com/s/files/1/0076/8747/1170/files/main_sp_01_750x.jpg?v=1597796972" alt=""></div>
+                                <div class="swiper-slide bg-img"><img src="{{ block.settings.imageDesktop | img_url: 'master' }}" alt=" Picture-{{ forloop.index }}"></div>
+                                <!-- small-img -->
+                                <div class="swiper-slide small-img"><img src="{{ block.settings.imageMobile | img_url: 'master' }}" alt=" Picture-{{ forloop.index }}"></div>
+                            {% endfor %}
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -53,7 +35,7 @@
             <div class="intro-actions">
                 <a href="/" class="btn-oval">
                     <span>
-                        Order Now
+                        {{ section.settings.ctaText }}
                     </span>
                 </a>
             </div>
