@@ -1,12 +1,14 @@
 #shopify-section-header {
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 100;
+    background-color: $white;
 }
 
 .header {
-    background-color: $white;
-    width: 100%;
+    width: 1405px;
+    margin: 0 auto;
     
     &__inner {
         padding: toRem(18) toRem(45); // Pading for left and right

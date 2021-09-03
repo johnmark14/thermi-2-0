@@ -56,12 +56,15 @@
                     flex-wrap: wrap;
 
                     li {
-                        flex-basis: 70px;
+                        flex: 1 2 65px;
                         margin-bottom: 40px;
                         border: 1.5px solid $lightGray1;
                         border-radius: 15px;
                         overflow: hidden;
                         padding: 5px;
+                        max-width: 70px;
+                        max-height: 70px;
+                        display: inline-block;
 
                         &:not(:last-child) {
                             margin-right: 20px;
@@ -69,6 +72,7 @@
 
                         img {
                             width: 100%;
+                            object-fit: fill;
                         }
 
                         @include breakpoint-down(small) {
