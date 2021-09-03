@@ -1,4 +1,4 @@
-<section class="section-services section-padding {% if section.settings.sectionTitle == blank %} remove-extra {% endif %}">
+<section id="section-services" class="section-services section-padding {% if section.settings.sectionTitle == blank %} remove-extra {% endif %}">
     <div class="services-shell shell">
         <h2 class="services-title {% if section.settings.sectionTitle != blank %} section-title {% endif %}">{{ section.settings.sectionTitle }}</h2>
         <div class="services-card">
@@ -9,7 +9,7 @@
                 <div class="services-label">
                     <p class="services-number">{{ section.settings.serviceName }}</p>
                     <p class="services-description">{{ section.settings.serviceDescription }}</p>
-                </div>
+                </div> 
                 {% if section.blocks.size != 0 %}
                 <div class="services-options">
                     <ul class="option">
