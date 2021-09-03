@@ -981,6 +981,10 @@ main {
   opacity: 1;
 }
 
+.section-services.remove-extra {
+  margin-top: -40px;
+}
+
 .section-services {
   background-color: #f7f7f7;
 }
@@ -1061,8 +1065,8 @@ main {
 
 .section-services .services-card .services-options > .option li {
   -webkit-box-flex: 1;
-      -ms-flex: 1 2 65px;
-          flex: 1 2 65px;
+      -ms-flex: 1 2 60px;
+          flex: 1 2 60px;
   margin-bottom: 40px;
   border: 1.5px solid #D6D6D6;
   border-radius: 15px;
