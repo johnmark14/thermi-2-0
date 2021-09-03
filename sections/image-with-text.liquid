@@ -1,25 +1,70 @@
 <section class="section-visit section-padding">
     <div class="visit-shell shell">
         <h2 class="visit-title section-title">
-            Visit
+            {{ section.settings.sectionHeading }}
         </h2>
         <div class="visit-container">
             <div class="visit-image">
-                <img src="assets/images/visit/page-visit.jpg" alt="">
+                <img src="{{ section.settings.leftBigImg | img_url: 'master' }}" alt="Shop Banner">
             </div>
             <div class="visit-info">
                 <div class="info-logo">
-                    <img src="assets/images/markitlab_logo_white.png" alt="">
+                    <img src="{{ section.settings.rightSmallImg | img_url: 'master'}}" alt="Shop Logo">
                 </div>
                 <div class="info-description">
-                    <p>It is an experience space where you can enjoy <span>Mark It By Kinto</span>
-                        even more. You can actually see the product in your hand.
+                    <p>
+                        {{ section.settings.rightTextDesc }}
                     </p>
                 </div>
                 <div class="info-btn">
-                    <a href="/"><span>View More</span></a>
+                    <a href="{{ section.settings.btnUrl }}"><span>{{ section.settings.btnText }}</span></a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+{% schema %}
+{
+    "name": "Image with Text",
+    "settings": [
+        {
+            "type": "text",
+            "id": "sectionHeading",
+            "label": "Section Heading",
+            "default": "Visit"
+        },
+        {
+            "type": "image_picker",
+            "id": "leftBigImg",
+            "label": "Left Big Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "rightSmallImg",
+            "label": "Right Small Image"
+        },
+        {
+            "type": "richtext",
+            "id": "rightTextDesc",
+            "label": "Right Text Description",
+            "default": "<p> Add something to describe this section.</p>"
+        },
+        {
+            "type": "text",
+            "id": "btnText",
+            "label": "Right Button Text",
+            "default": "View more"
+        },
+        {
+            "type": "url",
+            "id": "btnUrl",
+            "label": "Right Button URL"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Image with Text"
+        }
+    ]
+}
+{% endschema %}
