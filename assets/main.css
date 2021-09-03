@@ -305,7 +305,7 @@ main {
 }
 
 .header {
-  width: 1405px;
+  max-width: 1405px;
   margin: 0 auto;
 }
 

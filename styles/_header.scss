@@ -7,9 +7,9 @@
 }
 
 .header {
-    width: 1405px;
+    max-width: 1405px;
     margin: 0 auto;
-    
+
     &__inner {
         padding: toRem(18) toRem(45); // Pading for left and right
         @include breakpoint-down(medium) {
