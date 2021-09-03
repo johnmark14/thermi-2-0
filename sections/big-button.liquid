@@ -1,0 +1,28 @@
+<section class="section-ordernow section-padding">
+    <div class="ordernow-shell shell">
+        <a href="{{ section.settings.url }}" class="products-btn  big-btn"><span>{{ section.settings.buttonText }}</span></a>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Big Button",
+    "settings": [
+        {
+            "type": "text",
+            "id": "buttonText",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "buttonUrl",
+            "label": "Button URL"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Big Button"
+        }
+    ]
+}
+{% endschema %}
