@@ -1,4 +1,4 @@
-<section id="section-services" class="section-services section-padding {% if section.settings.sectionTitle == blank %} remove-extra {% endif %}">
+<section id="{{ section.settings.anchorID }}" class="section-services section-padding {% if section.settings.sectionTitle == blank %} remove-extra {% endif %}">
     <div class="services-shell shell">
         <h2 class="services-title {% if section.settings.sectionTitle != blank %} section-title {% endif %}">{{ section.settings.sectionTitle }}</h2>
         <div class="services-card">
@@ -72,6 +72,12 @@
             "id": "flip",
             "label": "Flip?",
             "default": false
+        },
+        {
+            "type": "text",
+            "id": "anchorID",
+            "label": "Anchor ID",
+            "info": "Add an anchor link to create an on page navigation."
         }
     ],
     "blocks": [

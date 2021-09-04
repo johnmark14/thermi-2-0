@@ -1,4 +1,4 @@
-<section class="section-plaintext section-padding" id="section-movie">
+<section class="section-plaintext section-padding" id="{{ section.settings.anchorID }}">
     <div id="conceptMovie" class="plaintext-shell shell">
         <h4 class="plaintext-title">{{ section.settings.sectionTitle }}</h4>
         <div class="plaintext-container grid grid-temp-col-2">
@@ -117,6 +117,12 @@ function stopVideo() {
             "type": "text",
             "id": "videoId",
             "label": "YouTube Video ID"
+        },
+        {
+            "type": "text",
+            "id": "anchorID",
+            "label": "Anchor ID",
+            "info": "Add an anchor link to create an on page navigation."
         }
     ],
     "presets": [

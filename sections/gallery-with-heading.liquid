@@ -1,4 +1,4 @@
-<section class="section-social section-padding">
+<section class="section-social section-padding" id="{{ section.settings.anchorID }}">
     <div class="social-shell">
         <h2 class="social-title section-title">
             {{ section.settings.sectionHeading }}
@@ -47,6 +47,12 @@
             "id": "imgUrl",
             "label": "Gallery Link",
             "info": "This is required. This where you want your user to be redirected when they click on the image."
+        },
+        {
+            "type": "text",
+            "id": "anchorID",
+            "label": "Anchor ID",
+            "info": "Add an anchor link to create an on page navigation."
         }
     ],
     "blocks": [

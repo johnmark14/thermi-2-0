@@ -1,4 +1,4 @@
-<section class="section-products section-padding">
+<section class="section-products section-padding" id="{{ section.settings.anchorID }}">
   <div class="products-shell shell">
     <h2 class="products-title section-title">{{ section.settings.sectionHeading }}</h2>
     <div class="products-carousel">
@@ -80,7 +80,13 @@
             "type": "url",
             "id": "buttonUrl",
             "label": "Button URL"
-        }
+        },
+        {
+          "type": "text",
+          "id": "anchorID",
+          "label": "Anchor ID",
+          "info": "Add an anchor link to create an on page navigation."
+      }
     ],
     "blocks": [
         {

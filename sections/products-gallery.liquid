@@ -1,4 +1,4 @@
-<section class="section-ideas section-padding {% if section.settings.sectionTitle == blank %} remove-extra {% endif %}">
+<section class="section-ideas section-padding {% if section.settings.sectionTitle == blank %} remove-extra {% endif %}" id="{{ section.settings.anchorID }}">
     <div class="ideas-shell shell">
         <h2 class="ideas-title {% if section.settings.sectionTitle != blank %} section-title {% endif %}">{{ section.settings.sectionTitle }}</h2>
         {% if section.blocks.size != 0%}
@@ -37,6 +37,12 @@
             "type": "url",
             "id": "url",
             "label": "link"
+        },
+        {
+            "type": "text",
+            "id": "anchorID",
+            "label": "Anchor ID",
+            "info": "Add an anchor link to create an on page navigation."
         }
     ],
     "blocks": [
