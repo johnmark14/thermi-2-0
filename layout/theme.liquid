@@ -10,7 +10,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {{ content_for_header }}
   <!-- Favicon -->
-  <link rel="shortcut icon" href="https://cdn.shopify.com/s/files/1/0076/8747/1170/files/kinto-favicon_32x32.png?v=1554888130" type="image/png">
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {%- endif -%}
+  
   <!-- Google Fonts -->
   <link
   href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"

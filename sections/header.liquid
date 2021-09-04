@@ -1,6 +1,20 @@
 <!-- Author: John Mark Connect with me @ GitHub: johnmark14 -->
 
 <!-- Start Header -->
+{%- assign social_icons = false -%}
+{%- if settings.social_twitter_link != blank
+    or settings.social_facebook_link != blank
+    or settings.social_instagram_link != blank
+    or settings.social_youtube_link != blank
+    or settings.social_tiktok_link != blank
+    or settings.social_snapchat_link != blank 
+-%}
+    {%- assign social_icons = true -%}
+    <script>
+        console.log(test);
+    </script>
+{%- endif -%}
+
 <header class="header" id="header">
   <!-- Outer for Contrast -->
     <a class="outer-overlay" :class="{ showOverlay: isOpen }" @click.prevent="toggleMenu">
@@ -32,23 +46,41 @@
                 </div>
               {% endif %}
               <div class="content-footer">
-                  <ul class="footer-links">
-                      <li><a href="">inquiry</a></li>
-                      <li><a href="">about purchase</a></li>
-                      <li><a href="">privacy</a></li>
-                      <li><a href="">specified commercial transaction law</a></li>
-                  </ul>
+                  {% if linklists.footer.links.size != 0 %}
+                    <ul class="footer-links">
+                        {% for link in linklists.footer.links %}
+                            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                  {% endif %}
                   <div class="footer-brand">
                       {% if section.settings.logo %}
                         <a href="/" class="logo"><img src="{{ section.settings.logo | img_url: 'medium' }}" alt="logo"></a>
                       {% else %}
                       <a class="header__nav-logo" href="{{ routes.root_url }}">{{ shop.name }}</a>
                       {% endif %}
-                      <ul class="socials">
-                          <li><a href="/"><span><i class="fab fa-twitter"></i></span></a></li>
-                          <li><a href="/"><span><i class="fab fa-facebook-f"></i></a></li>
-                          <li><a href="/"><span><i class="fab fa-instagram"></i></span></a></li>
-                      </ul>
+                      {% if social_icons %}
+                        <ul class="socials">
+                            {% if settings.social_twitter_link != blank %}
+                                <li><a href="{{ settings.social_twitter_link }}"><span><i class="fab fa-twitter"></i></span></a></li>
+                            {% endif %}
+                            {% if settings.social_facebook_link != blank %}
+                                <li><a href="{{ settings.social_facebook_link }}"><span><i class="fab fa-facebook-f"></i></span></a></li>
+                            {% endif %}
+                            {% if settings.social_instagram_link != blank %}
+                                <li><a href="{{ settings.social_instagram_link }}"><span><i class="fab fa-instagram"></i></span></a></li>
+                            {% endif %}
+                            {% if settings.social_youtube_link != blank %}
+                                <li><a href="{{ settings.social_youtube_link }}"><span><i class="fab fa-youtube"></i></span></a></li>
+                            {% endif%}
+                            {% if settings.social_tiktok_link != blank %}
+                                <li><a href="{{ settings.social_tiktok_link }}"><span><i class="fab fa-tiktok"></i></span></a></li>
+                            {% endif%}
+                            {% if settings.social_snapchat_link != blank %}
+                                <li><a href="{{ settings.social_snapchat_link }}"><span><i class="fab fa-snapchat"></i></span></a></li>
+                            {% endif%}
+                        </ul>
+                      {% endif %}
                   </div>
               </div>
           </div>

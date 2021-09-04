@@ -208,19 +208,14 @@
 
                     .footer-brand{
                         padding-top: 80px;
-                        display: flex;
-                        flex-direction: column;
-                        margin: auto;
-                        align-items: center;
-
+                        text-align: center;
                         a > img {
                             width: toRem(116);
                         }
 
                         .socials {
                             display: flex;
-                            width: 50%;
-                            justify-content: space-around;
+                            justify-content: space-evenly;
                             padding-top: 20px;
 
                             a {
