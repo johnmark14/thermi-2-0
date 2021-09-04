@@ -3,8 +3,17 @@ html {
     box-sizing: border-box;
     scroll-behavior: smooth;
     height: 100vh;
+
+    // On page scroll on desktop
     @include header-breakpoint() {
         scroll-padding-top: 70px;
+    }
+    
+    // On page scroll on mobile
+    @include breakpoint-down(small) {
+        @include header-breakpoint() {
+            scroll-padding-top: 65px;
+        }
     }
 }
 

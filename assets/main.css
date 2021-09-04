@@ -12,6 +12,12 @@ html {
   }
 }
 
+@media (max-width: 39.9375em) and (min-height: 32em) {
+  html {
+    scroll-padding-top: 65px;
+  }
+}
+
 *, *::before *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
