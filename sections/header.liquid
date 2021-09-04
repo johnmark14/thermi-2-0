@@ -26,7 +26,7 @@
                     <h4 class="nav-header">{{ section.settings.top.title }}</h4>
                     <ul class="nav-links">
                         {% for link in section.settings.top.links %}
-                        <li><a href="{{ link.url }}" class="links">-- {{ link.title }}</a></li>
+                        <li><a href="{{ link.url }}" class="links" @click="toggleMenu">-- {{ link.title }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>

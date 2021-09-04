@@ -8,7 +8,7 @@ html {
 
 @media (min-height: 32em) {
   html {
-    scroll-padding-top: 75px;
+    scroll-padding-top: 70px;
   }
 }
 
