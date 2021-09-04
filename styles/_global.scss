@@ -3,6 +3,9 @@ html {
     box-sizing: border-box;
     scroll-behavior: smooth;
     height: 100vh;
+    @include header-breakpoint() {
+        scroll-padding-top: 75px;
+    }
 }
 
 *, *::before *::after {

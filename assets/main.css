@@ -6,6 +6,12 @@ html {
   height: 100vh;
 }
 
+@media (min-height: 32em) {
+  html {
+    scroll-padding-top: 75px;
+  }
+}
+
 *, *::before *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
